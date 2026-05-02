@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Image Color Palette Generator{% endblock %}
+
+{% block content %}
+<section class="upload-section">
+    <div class="hero-grid">
+        <div class="card hero-card animate-up">
+            <span class="eyebrow">Smart Palette Studio</span>
+            <h2>Upload an Image</h2>
+            <p>Upload a photo and instantly extract premium, designer-ready colors with a single click.</p>
+            <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data" class="upload-form">
+                <div class="form-group file-input-container">
+                    <label for="image" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Choose an image</span>
+                    </label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                    <div id="file-name" class="file-name">No file chosen</div>
+                    <div class="preview-panel">
+                        <img id="preview-img" alt="Image preview" class="preview-img hidden">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="num_colors">Number of Colors:</label>
+                    <input type="range" id="num_colors" name="num_colors" min="2" max="10" value="5" class="color-slider">
+                    <div class="slider-value"><span id="color-value">5</span> colors</div>
+                </div>
+                
+                <button type="submit" class="btn">Generate Palette</button>
+            </form>
+        </div>
+
+        <div class="features animate-up">
+            <div class="feature">
+                <i class="fas fa-palette"></i>
+                <h3>Extract Dominant Colors</h3>
+                <p>Discover the strongest color harmony from every uploaded image.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-copy"></i>
+                <h3>Copy HEX Codes</h3>
+                <p>Copy palette codes in one click and paste them straight into your design workflow.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-adjust"></i>
+                <h3>Customized Palettes</h3>
+                <p>Choose between 2 and 10 colors to tailor the palette intensity.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="how-it-works animate-up">
+        <h3>How it works</h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-upload"></i></div>
+                <strong>Upload your image</strong>
+                <span>Select a photograph, illustration, or screenshot.</span>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-magic"></i></div>
+                <strong>Generate palette</strong>
+                <span>Extract a curated palette optimized for contrast and tone.</span>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-copy"></i></div>
+                <strong>Copy and use</strong>
+                <span>Copy HEX values instantly for web, UI, or branding projects.</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

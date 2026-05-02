@@ -1,0 +1,11 @@
+color_palette_generator/
+├── app.py                  
+├── color_extractor.py      
+├── static/
+│   │   └── style.css       
+│   │   └── script.js      
+│   └── uploads/           
+└── templates/
+    ├── base.html           
+    ├── index.html          
+    └── result.html

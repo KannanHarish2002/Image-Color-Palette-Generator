@@ -1,0 +1,19 @@
+1. Save all the files in the structure shown above
+2. Install the required packages:
+   pip install flask pillow scikit-learn numpy
+
+3. Run the application:
+   python app.py
+
+4. Open your browser and navigate to:
+   http://127.0.0.1:5000/
+
+The application will start in debug mode, which means:
+- The server will automatically reload when you make changes to the code
+- Detailed error messages will be shown in the browser
+
+Usage:
+1. Upload an image using the form on the home page
+2. Select the number of colors you want to extract using the slider
+3. Click "Generate Palette" to process the image
+4. View the extracted color palette and copy color codes as needed
